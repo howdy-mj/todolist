@@ -9,9 +9,9 @@ class App extends Component {
   state = {
     input: '',
     todos: [
-      { id: 0, text: ' 리액트 소개', checked: false },
-      { id: 1, text: ' 리액트 소개', checked: true },
-      { id: 2, text: ' 리액트 소개', checked: false }
+      { id: 0, text: ' 블로그 글 쓰기', checked: false },
+      { id: 1, text: ' todo 만들기', checked: true },
+      { id: 2, text: ' 운전면허 따기', checked: false }
     ]
   }
 
@@ -42,7 +42,7 @@ class App extends Component {
   }
 
   render() {
-    const { input } = this.state;
+    const { input, todos } = this.state;
     const {
       handleChange,
       handleCreate,
@@ -58,7 +58,7 @@ class App extends Component {
           onCreate={handleCreate}
         />
       )}>
-        <ToDoItemList />
+        <ToDoItemList todos={todos}/>
       </TodoListTemplate>
     );
   }
